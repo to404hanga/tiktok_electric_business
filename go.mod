@@ -6,7 +6,8 @@ require (
 	github.com/go-sql-driver/mysql v1.9.0
 	github.com/golang/mock v1.6.0
 	github.com/redis/go-redis/v9 v9.7.1
-	github.com/to404hanga/pkg404 v0.0.13
+	github.com/to404hanga/pkg404 v0.0.14
+	golang.org/x/crypto v0.32.0
 	gorm.io/gorm v1.25.12
 )
 
