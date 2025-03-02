@@ -5,8 +5,8 @@ managed:
     default: "tiktok_electric_business/api/proto/gen"
 plugins:
   - plugin: buf.build/protocolbuffers/go
-    out: "tiktok_electric_business/api/proto/gen"
+    out: "api/proto/gen"
     opt: paths=source_relative
   - plugin: buf.build/grpc/go
-    out: "tiktok_electric_business/api/proto/gen"
+    out: "api/proto/gen"
     opt: paths=source_relative
