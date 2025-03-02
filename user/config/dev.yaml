@@ -1,0 +1,15 @@
+db:
+  dsn: "root:123456@tcp(localhost:3306)/teb_user"
+
+redis:
+  addr: "localhost:6379"
+
+etcd:
+  endpoints:
+    - "localhost:2379"
+
+grpc:
+  server: 
+    port: 8100
+    etcdTTL: 60
+    etcdAddr: "localhost:2379"
