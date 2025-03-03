@@ -1,0 +1,24 @@
+db:
+  dsn: "root:123456@tcp(127.0.0.1:3306)/teb_sms"
+
+redis:
+  addr: "127.0.0.1:6379"
+
+etcd:
+  endpoints:
+    - "127.0.0.1:2379"
+
+grpc:
+  server: 
+    port: 8101
+    etcdTTL: 60
+    etcdAddr: "127.0.0.1:2379"
+
+log:
+  mode: dev
+  outputPaths:
+    - "./log/log.txt"
+    - "../log/log.txt"
+  errorOutputPaths:
+    - "./log/error_output.txt"
+    - "../log/error_output.txt"
