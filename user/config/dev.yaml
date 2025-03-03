@@ -1,15 +1,26 @@
 db:
-  dsn: "root:123456@tcp(localhost:3306)/teb_user"
+  dsn: "root:123456@tcp(127.0.0.1:3306)/teb_user"
 
 redis:
-  addr: "localhost:6379"
+  addr: "127.0.0.1:6379"
+  user:
+    expiration: 15m
 
 etcd:
   endpoints:
-    - "localhost:2379"
+    - "127.0.0.1:2379"
 
 grpc:
   server: 
     port: 8100
     etcdTTL: 60
-    etcdAddr: "localhost:2379"
+    etcdAddr: "127.0.0.1:2379"
+
+log:
+  mode: dev
+  outputPaths:
+    - "log/log.txt"
+    - "../log/log.txt"
+  errorOutputPaths:
+    - "log/log.txt"
+    - "../log/log.txt"

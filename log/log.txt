@@ -1,0 +1,2 @@
+2025-03-03T11:24:49.394+0800	DEBUG	logger/zap_logger.go:20	续约: 	{"resp": "cluster_id:14841639068965178418 member_id:10276657743932975437 revision:1 raft_term:3 "}
+2025-03-03T11:25:09.416+0800	DEBUG	logger/zap_logger.go:20	续约: 	{"resp": "cluster_id:14841639068965178418 member_id:10276657743932975437 revision:2 raft_term:3 "}

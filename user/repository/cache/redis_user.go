@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/redis/go-redis/v9"
+	"github.com/spf13/viper"
 )
 
 type RedisUserCache struct {
@@ -17,10 +18,10 @@ type RedisUserCache struct {
 
 var _ UserCache = (*RedisUserCache)(nil)
 
-func NewRedisUserCache(cmd redis.Cmdable, expiration time.Duration) UserCache {
+func NewRedisUserCache(cmd redis.Cmdable) UserCache {
 	return &RedisUserCache{
 		cmd:        cmd,
-		expiration: expiration,
+		expiration: viper.GetDuration("redis.user.expiration"),
 	}
 }
 
