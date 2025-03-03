@@ -19,8 +19,8 @@ grpc:
 log:
   mode: dev
   outputPaths:
-    - "log/log.txt"
+    - "./log/log.txt"
     - "../log/log.txt"
   errorOutputPaths:
-    - "log/log.txt"
-    - "../log/log.txt"
+    - "./log/errorOutput.txt"
+    - "../log/errorOutput.txt"

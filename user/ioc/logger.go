@@ -1,6 +1,8 @@
 package ioc
 
 import (
+	"tiktok_electric_business/pkg/logfile"
+
 	"github.com/spf13/viper"
 	"github.com/to404hanga/pkg404/logger"
 	"go.uber.org/zap"
@@ -21,8 +23,12 @@ func InitLogger() logger.Logger {
 		cfg = zap.NewDevelopmentConfig()
 	}
 
-	cfg.OutputPaths = append(cfg.OutputPaths, viper.GetStringSlice("log.outputPaths")...)
-	cfg.ErrorOutputPaths = append(cfg.ErrorOutputPaths, viper.GetStringSlice("log.errorOutputPaths")...)
+	outputPaths := viper.GetStringSlice("log.outputPaths")
+	errorOutputPaths := viper.GetStringSlice("log.errorOutputPaths")
+	logfile.InitLogFilePath(outputPaths...)
+	logfile.InitLogFilePath(errorOutputPaths...)
+	cfg.OutputPaths = append(cfg.OutputPaths, outputPaths...)
+	cfg.ErrorOutputPaths = append(cfg.ErrorOutputPaths, errorOutputPaths...)
 
 	l, err := cfg.Build()
 	if err != nil {
