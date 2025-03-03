@@ -36,7 +36,7 @@ func NewLimitedUserService(repo repository.UserRepository, l logger.Logger, limi
 func (u *LimitedUserService) Login(ctx context.Context, email, password string) (domain.User, error) {
 	limited, err := u.limit.Limit(ctx, fmt.Sprintf("%s:login:%s", prefix, email))
 	if err != nil {
-		u.l.Error("Limit error", logger.Error(err))
+		u.l.Error("Limiter error", logger.Error(err))
 	}
 	if limited {
 		u.l.Warn("Too many login attempts", logger.SafeEmail(email))

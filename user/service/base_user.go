@@ -66,7 +66,7 @@ func (b *BaseUserService) FindOrCreateByWechat(ctx context.Context, info domain.
 func (b *BaseUserService) SignUp(ctx context.Context, user domain.User) error {
 	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
 	if err != nil {
-		b.l.Error("bcrypt generate password error", logger.Error(err))
+		b.l.Error("Bcrypt generate password error", logger.Error(err))
 		return err
 	}
 	user.Password = string(hash)

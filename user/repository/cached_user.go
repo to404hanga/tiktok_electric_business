@@ -79,7 +79,7 @@ func (c *CachedUserRepository) FindById(ctx context.Context, id int64) (domain.U
 
 	go func() {
 		if err = c.cache.Set(ctx, user); err != nil {
-			c.l.Error("写入缓存失败", logger.Error(err))
+			c.l.Error("Failed to cache", logger.Error(err))
 		}
 	}()
 

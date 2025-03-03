@@ -22,5 +22,5 @@ log:
     - "./log/log.txt"
     - "../log/log.txt"
   errorOutputPaths:
-    - "./log/errorOutput.txt"
-    - "../log/errorOutput.txt"
+    - "./log/error_output.txt"
+    - "../log/error_output.txt"
