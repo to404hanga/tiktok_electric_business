@@ -62,5 +62,5 @@ func (c *RedisCodeCache) Verify(ctx context.Context, biz, phone, code string) (b
 }
 
 func key(biz, phone string) string {
-	return fmt.Sprintf("phone_code:%s:%s", biz, phone)
+	return fmt.Sprintf("teb:code:phone_code:%s:%s", biz, phone)
 }
